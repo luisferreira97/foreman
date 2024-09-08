@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: partners
+    description: "Contains information about the partners of the event"
+    columns:
+      - name: id
+        type: number
+        description: "Identifies the partner"
+
+      - name: name
+        type: string
+        description: "The name of the organization (company) that is a partner"
+
+      - name: website
+        type: string
+        description: "The URL of the website of the partner"
+
+      - name: tier
+        type: string
+        description: "The tier of the partnership"

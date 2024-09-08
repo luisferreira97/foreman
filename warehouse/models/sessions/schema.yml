@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: sessions
+    description: "Contains information about the sessions including location, time and content details"
+    columns:
+      - name: id
+        description: "The identification number of the session"
+
+      - name: speaker_id
+        description: "The primary key for this table"
+
+      - name: title
+        description: "The title of the session"
+
+      - name: summary
+        description: "Short text description of the session content and details"
+
+      - name: type
+        description: "The type of session"
+
+      - name: location
+        description: "The name of the room in the venue where the session takes place"
+
+      - name: date
+        description: "The date of the session in format YYYY-MM-DD"
+
+      - name: timeslot
+        description: "The time slot of the session in format HH:MM-HH:MM"
+
+      - name: duration
+        description: "The duration, in minutes, of the session"

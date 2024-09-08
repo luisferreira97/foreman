@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: tutorials
+    description: "Hands on tutorials that are part of the conference"
+    columns:
+      - name: id
+        description: "The identification number of the hands-on tutorial"
+
+      - name: speaker_id
+        description: "The primary key for this table"
+
+      - name: title
+        description: "The title of the hands-on tutorial"
+
+      - name: summary
+        description: "Short text description of the hands-on tutorial content and details"
+
+      - name: date
+        description: "The date of the hands-on tutorial in format YYYY-MM-DD"
+
+      - name: schedule
+        description: "The time slot of the hands-on tutorial in format HH:MM-HH:MM"
+
+      - name: duration
+        description: "The duration, in minutes, of the hands-on tutorial"

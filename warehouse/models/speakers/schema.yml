@@ -1,0 +1,21 @@
+
+version: 2
+
+models:
+  - name: speakers
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The identification number of the speaker"
+
+      - name: name
+        description: "The name of the speaker"
+
+      - name: pronouns
+        description: "How the speaker prefers to be addressed"
+
+      - name: role
+        description: "The current position of the speaker"
+
+      - name: bio
+        description: "Short text description of the speaker's background and interests"
