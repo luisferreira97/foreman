@@ -2,31 +2,40 @@ version: 2
 
 models:
   - name: sessions
-    description: "Contains information about the sessions including location, time and content details"
+    description: "{{ doc('sessions') }}"
     columns:
       - name: id
+        type: integer
         description: "The identification number of the session"
 
       - name: speaker_id
+        type: integer
         description: "The primary key for this table"
 
       - name: title
+        type: string
         description: "The title of the session"
 
       - name: summary
+        type: string
         description: "Short text description of the session content and details"
 
       - name: type
+        type: string
         description: "The type of session"
 
       - name: location
+        type: string
         description: "The name of the room in the venue where the session takes place"
 
       - name: date
+        type: date
         description: "The date of the session in format YYYY-MM-DD"
 
       - name: timeslot
+        type: string
         description: "The time slot of the session in format HH:MM-HH:MM"
 
       - name: duration
+        type: integer
         description: "The duration, in minutes, of the session"

@@ -3,19 +3,24 @@ version: 2
 
 models:
   - name: speakers
-    description: "A starter dbt model"
+    description: "{{ doc('speakers') }}"
     columns:
       - name: id
+        type: integer
         description: "The identification number of the speaker"
 
       - name: name
+        type: string
         description: "The name of the speaker"
 
       - name: pronouns
+        type: string
         description: "How the speaker prefers to be addressed"
 
       - name: role
+        type: string
         description: "The current position of the speaker"
 
       - name: bio
+        type: string
         description: "Short text description of the speaker's background and interests"

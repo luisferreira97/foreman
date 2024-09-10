@@ -2,15 +2,16 @@ version: 2
 
 models:
   - name: attractions
-    description: "Contains information about the city and its relevant attractions for visiting or for sleeping"
+    description: "{{ doc('attractions') }}"
     columns:
-      - name: type
-        type: string
-        description: "Identifies the type of attraction"
 
       - name: name
         type: string
         description: "The name of the attraction"
+
+      - name: type
+        type: string
+        description: "Identifies the type of attraction"
 
       - name: short_description
         type: string

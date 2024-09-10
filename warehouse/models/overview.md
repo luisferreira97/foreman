@@ -35,4 +35,11 @@ The topics the are tackled in the festival, which are also used as tags for the 
 
 Data Makers Fest is held at Alfândega do Porto, a congress center right by the river in beautiful Porto. The address is Rua Nova da Alfândega, Edifício da Alfândega, Porto.
 
+### Data Model
+
+This project models the main information regarding the festival and its organization. 
+
+⚠️ Disclaimer 
+This project is not associated with Data Makers Fest or its organizers. All of the information provided here is either based on publicly available data from the festival website or made up by the developers for demo purposes.
+
 {% enddocs %}

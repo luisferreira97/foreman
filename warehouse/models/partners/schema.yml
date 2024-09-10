@@ -2,10 +2,10 @@ version: 2
 
 models:
   - name: partners
-    description: "Contains information about the partners of the event"
+    description: "{{ doc('partners') }}"
     columns:
       - name: id
-        type: number
+        type: integer
         description: "Identifies the partner"
 
       - name: name

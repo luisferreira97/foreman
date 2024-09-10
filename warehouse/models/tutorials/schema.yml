@@ -2,25 +2,28 @@ version: 2
 
 models:
   - name: tutorials
-    description: "Hands on tutorials that are part of the conference"
+    description: "{{ doc('tutorials') }}"
     columns:
       - name: id
+        type: integer
         description: "The identification number of the hands-on tutorial"
 
       - name: speaker_id
+        type: integer
         description: "The primary key for this table"
 
       - name: title
+        type: string
         description: "The title of the hands-on tutorial"
 
       - name: summary
+        type: string
         description: "Short text description of the hands-on tutorial content and details"
 
-      - name: date
-        description: "The date of the hands-on tutorial in format YYYY-MM-DD"
-
       - name: schedule
+        type: string
         description: "The time slot of the hands-on tutorial in format HH:MM-HH:MM"
 
       - name: duration
+        type: string
         description: "The duration, in minutes, of the hands-on tutorial"
