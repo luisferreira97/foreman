@@ -1,0 +1,148 @@
+{
+    "partners": {
+        "schema": "main",
+        "description": "Table contains information regarding the event partners, the organizations that support the festival by sponsoring it.\n\nEach partner is uniquely identified by its `id` with additional information provided by the `name` and `website`.\n\n### Tier\n\nPartners are divided into Tiers depending on the sponsorship packaged they selected when choosing to cooperate with the festival\n\nThere are x tiers:\n- ...\n- ...\n- ...\n- ...",
+        "columns": {
+            "id": {
+                "description": "Identifies the partner",
+                "type": "integer"
+            },
+            "name": {
+                "description": "The name of the organization (company) that is a partner",
+                "type": "string"
+            },
+            "website": {
+                "description": "The URL of the website of the partner",
+                "type": "string"
+            },
+            "tier": {
+                "description": "The tier of the partnership",
+                "type": "string"
+            }
+        }
+    },
+    "sessions": {
+        "schema": "main",
+        "description": "Table contains information about the presentation sessions, including content details, time and location.\n\nEach session is uniquely identified by the combination of `id` and `speaker_id`, as a session can have more than one presenter. The `speaker_id` column is a foreign key for column `id` of the `speakers` table.\n\nThe sessions are also divided by their `type`: short or long. Note that Hands-On Tutorials, while part of the same agenda, are kept in a separate model named `tutorials`.",
+        "columns": {
+            "id": {
+                "description": "The identification number of the session",
+                "type": "integer"
+            },
+            "speaker_id": {
+                "description": "The primary key for this table",
+                "type": "integer"
+            },
+            "title": {
+                "description": "The title of the session",
+                "type": "string"
+            },
+            "summary": {
+                "description": "Short text description of the session content and details",
+                "type": "string"
+            },
+            "type": {
+                "description": "The type of session",
+                "type": "string"
+            },
+            "location": {
+                "description": "The name of the room in the venue where the session takes place",
+                "type": "string"
+            },
+            "date": {
+                "description": "The date of the session in format YYYY-MM-DD",
+                "type": "date"
+            },
+            "timeslot": {
+                "description": "The time slot of the session in format HH:MM-HH:MM",
+                "type": "string"
+            },
+            "duration": {
+                "description": "The duration, in minutes, of the session",
+                "type": "integer"
+            }
+        }
+    },
+    "speakers": {
+        "schema": "main",
+        "description": "Table contains information about the speakers which are presenters of the sessions or tutors in the hands-on tutorials.\n\nEach speaker is uniquely identified by their `id`. The model also tracks their name, the pronouns by which they prefer to be addressed and a short biography.\n\nThe `role` column showcases their current professional affiliation including both position (eg. Data Engineer, Data Scientist) and organization (eg. Google, University of Minho). The information is stored as text in the format \"{position} at {organization}\".",
+        "columns": {
+            "id": {
+                "description": "The identification number of the speaker",
+                "type": "integer"
+            },
+            "name": {
+                "description": "The name of the speaker",
+                "type": "string"
+            },
+            "pronouns": {
+                "description": "How the speaker prefers to be addressed",
+                "type": "string"
+            },
+            "role": {
+                "description": "The current position of the speaker",
+                "type": "string"
+            },
+            "bio": {
+                "description": "Short text description of the speaker's background and interests",
+                "type": "string"
+            }
+        }
+    },
+    "attractions": {
+        "schema": "main",
+        "description": "Table contains information regarding relevant attractions in the city of Porto for participants in the festival.\n\nEach attraction is uniquely identified by its name. Additional details are provided by the short description and the address.\n\n### Types\nThere are two types of attractions:\n- Stay: nearby accommodation options for participants to stay in the city during the festival.\n- Visit: popular tourist attractions in the City that participants can visit during their stay for the festival.\n\n### Discount\nSpecial prices might be available for participants of the festival by using a discount.\n\nIf available, the discount is provided by the column with the same name as a percentage (0-100). In cases where there is no discount, the column is `null`.\n\nThe price itself of entry to the attraction is not tracked and participants should check directly with the attraction.",
+        "columns": {
+            "name": {
+                "description": "The name of the attraction",
+                "type": "string"
+            },
+            "type": {
+                "description": "Identifies the type of attraction",
+                "type": "string"
+            },
+            "short_description": {
+                "description": "A short description of the attraction",
+                "type": "string"
+            },
+            "address": {
+                "description": "Address of the attraction",
+                "type": "string"
+            },
+            "discount": {
+                "description": "Discount, in percentage, available for the attraction for the attendees, if any",
+                "type": "int"
+            }
+        }
+    },
+    "tutorials": {
+        "schema": "main",
+        "description": "Table contains information about the hands-on tutorials.\n\nEach tutorial is uniquely identified by the `id`. The `speaker_id` column is a foreign key for column `id` of the `speakers` table and references the tutor for the hands-on tutorial.\n\nAs opposed to the `sessions` this model does not track location and date information as all tutorials will be held on the 23rd of September at Porto Business School.",
+        "columns": {
+            "id": {
+                "description": "The identification number of the hands-on tutorial",
+                "type": "integer"
+            },
+            "speaker_id": {
+                "description": "The primary key for this table",
+                "type": "integer"
+            },
+            "title": {
+                "description": "The title of the hands-on tutorial",
+                "type": "string"
+            },
+            "summary": {
+                "description": "Short text description of the hands-on tutorial content and details",
+                "type": "string"
+            },
+            "schedule": {
+                "description": "The time slot of the hands-on tutorial in format HH:MM-HH:MM",
+                "type": "string"
+            },
+            "duration": {
+                "description": "The duration, in minutes, of the hands-on tutorial",
+                "type": "string"
+            }
+        }
+    }
+}
