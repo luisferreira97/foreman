@@ -197,7 +197,7 @@ def main():
     print(ai_msg.content.replace("```sql\n","").replace("\n```",""))
 
     # Query 3
-    question = "Are there any speakers with more than one session (including tutorials)?"
+    question = "Are there any speakers with more than one participation?"
     print(f"\nQuestion: {question}")
     prompt_template.messages.append(HumanMessage(content=question))
     prompt = prompt_template.format(event=overview, context=context)
