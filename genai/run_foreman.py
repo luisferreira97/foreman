@@ -70,7 +70,6 @@ def get_context(docs: dict) -> str:
 
     return context
 
-
 def main():
     _ = load_dotenv(find_dotenv()) # read local .env file
     api_key = os.environ['OPENAI_API_KEY']
@@ -204,8 +203,4 @@ def main():
     ai_msg = llm.invoke(prompt)
     print("\nAnswer:")
     print(ai_msg.content.replace("```sql\n","").replace("\n```",""))
-
-if __name__ == "__main__":
-    main()
-
     
