@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: attractions
+    description: "{{ doc('attractions') }}"
+    columns:
+
+      - name: name
+        type: string
+        description: "The name of the attraction"
+
+      - name: type
+        type: string
+        description: "Identifies the type of attraction"
+
+      - name: short_description
+        type: string
+        description: "A short description of the attraction"
+
+      - name: address
+        type: string
+        description: "Address of the attraction"
+
+      - name: discount
+        type: int
+        description: "Discount, in percentage, available for the attraction for the attendees, if any"
